@@ -1,0 +1,17 @@
+{
+  "name": "draganddrop-projectints",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "lite-server": "^2.6.1",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "author": "",
+  "license": "ISC"
+}
