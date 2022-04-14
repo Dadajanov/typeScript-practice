@@ -121,6 +121,31 @@ const autobind = (
   return adjDescriptor;
 };
 
+// Component Base Class
+class Component<T extends HTMLElement, U extends HTMLElement> {
+  templateElement: HTMLTemplateElement;
+  hostElement: T;
+  element: U;
+
+  constructor(temlateId: string, hostElement: string, newElementId?: string) {
+    this.templateElement = document.getElementById(
+      temlateId
+    )! as HTMLTemplateElement;
+    this.hostElement = document.getElementById(hostElement)! as T;
+
+    const importedNode = document.importNode(
+      this.templateElement.content,
+      true
+    );
+    this.element = importedNode.firstElementChild as U;
+
+    if (newElementId) {
+      this.element.id = newElementId;
+    }
+  }
+}
+
+// ProjectList Class
 class ProjectList {
   templateElement: HTMLTemplateElement;
   hostElement: HTMLDivElement;
